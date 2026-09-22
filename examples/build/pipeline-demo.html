@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Equipes editoriais multiagente para a produção de papers técnicos</title>
+<style>/* ═══ Papo Pepper — folha acadêmica A4 ═══════════════════════════════ */
+:root {
+  --ink: #1c2430;
+  --accent: #12365d;
+  --soft: #5b6b7f;
+  --line: #d9e0e8;
+  --bg-code: #f5f7fa;
+}
+
+@page {
+  size: A4;
+  margin: 2.4cm 2.1cm;
+  @bottom-center {
+    content: "página " counter(page) " de " counter(pages);
+    font-size: 8pt;
+    color: #8a94a6;
+  }
+}
+
+* { box-sizing: border-box; }
+html { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+
+body {
+  margin: 0;
+  color: var(--ink);
+  font-family: "Source Serif 4", "Source Serif Pro", Charter, Georgia, "Times New Roman", serif;
+  font-size: 10.5pt;
+  line-height: 1.7;
+}
+
+@media screen {
+  body { background: #eef1f5; }
+  article.paper {
+    max-width: 47rem;
+    margin: 2.5rem auto;
+    background: #fff;
+    padding: 3rem 3.2rem;
+    box-shadow: 0 10px 40px rgba(20, 30, 50, .12);
+    border-radius: 6px;
+  }
+}
+@media print {
+  article.paper { max-width: none; margin: 0; padding: 0; box-shadow: none; }
+}
+
+h1, h2, h3, h4 {
+  font-family: "Ivar Sans", Inter, "Helvetica Neue", Arial, sans-serif;
+  color: var(--accent);
+  line-height: 1.25;
+}
+h1 { font-size: 21pt; text-align: center; margin: 0 0 .35em; }
+h2 { font-size: 14pt; margin: 1.7em 0 .6em; padding-bottom: .25em; border-bottom: 1px solid var(--line); page-break-after: avoid; }
+h3 { font-size: 11.5pt; margin: 1.3em 0 .45em; page-break-after: avoid; }
+h4 { font-size: 10.5pt; margin: 1.1em 0 .4em; page-break-after: avoid; }
+
+p { text-align: justify; hyphens: auto; orphans: 3; widows: 3; margin: .65em 0; }
+a { color: var(--accent); text-decoration: none; border-bottom: 1px dotted rgba(18, 54, 93, .4); }
+strong { color: #101826; }
+ul, ol { padding-left: 1.4em; margin: .6em 0; }
+li { margin: .25em 0; text-align: justify; }
+hr { border: none; border-top: 1px solid var(--line); margin: 1.6em 0; }
+
+blockquote {
+  margin: 1em 0;
+  padding: .4em 1em;
+  border-left: 3px solid var(--accent);
+  background: #f7f9fc;
+  color: #3c4a5d;
+  font-style: italic;
+}
+
+table { width: 100%; border-collapse: collapse; margin: 1em 0; font-size: 9.5pt; page-break-inside: avoid; }
+th {
+  text-align: left;
+  font-family: "Ivar Sans", Inter, Arial, sans-serif;
+  font-size: 8.8pt;
+  letter-spacing: .04em;
+  text-transform: uppercase;
+  color: var(--accent);
+  padding: 6px 8px;
+  border-bottom: 2px solid var(--accent);
+}
+td { padding: 6px 8px; border-bottom: 1px solid var(--line); vertical-align: top; }
+
+code {
+  font-family: "SF Mono", "JetBrains Mono", Consolas, Menlo, monospace;
+  font-size: .92em;
+  background: #eef1f5;
+  padding: .1em .35em;
+  border-radius: 4px;
+}
+pre, pre.highlight, .codehilite {
+  background: var(--bg-code);
+  border: 1px solid #e3e8ef;
+  border-radius: 6px;
+  padding: 10px 12px;
+  font-size: 8.5pt;
+  line-height: 1.5;
+  white-space: pre-wrap;
+  word-break: break-word;
+  page-break-inside: avoid;
+  overflow-x: auto;
+}
+pre code, pre.highlight code { background: none; padding: 0; font-size: inherit; }
+pre.mermaid-code, pre code.language-mermaid { border-style: dashed; }
+
+img { max-width: 100%; height: auto; display: block; margin: 1em auto; }
+figure { margin: 1.2em 0; text-align: center; page-break-inside: avoid; }
+figcaption {
+  font-size: 8.8pt;
+  color: var(--soft);
+  font-style: italic;
+  margin-top: .5em;
+  font-family: "Ivar Sans", Inter, Arial, sans-serif;
+}
+
+.doc-footer {
+  margin-top: 2.2em;
+  font-size: 8pt;
+  color: #9aa4b2;
+  text-align: center;
+  font-family: "Ivar Sans", Inter, Arial, sans-serif;
+}
+</style>
+</head>
+<body>
+<article class="paper">
+<h1>Equipes editoriais multiagente para a produção de papers técnicos</h1>
+<p><strong>Autor:</strong> usuário + equipe Papo Pepper · <strong>Data:</strong> 2026-09-22 · <strong>Estilo:</strong> IEEE</p>
+<h2>Resumo</h2>
+<p>Este preprint descreve o Papo Pepper, um pipeline de agentes especializados que transforma matéria-prima heterogênea (tema, áudio, texto, artigo, repositório) em papers profundos com garantia de verificação. A arquitetura separa <em>produção</em> de <em>julgamento</em>: redatores escrevem; validadores, céticos, retadores e um juiz notado aprovam. Três invariantes sustentam a qualidade: toda afirmação factual tem fonte, todo número tem execução, e nenhum papel decide sobre si mesmo [1][2].</p>
+<p><strong>Palavras-chave:</strong> agentes de linguagem; edição científica; verificação automática; multiagente</p>
+<h2>1. Introdução</h2>
+<h3>1.1 Problema</h3>
+<p>Geradores únicos de texto produzem papers fluentes e frequentemente inverificáveis: fontes inexistentes, números sem origem, método opaco. A falha raramente é de estilo — é de processo.</p>
+<h3>1.2 Abordagem</h3>
+<p>Separar papéis como numa redação real: pesquisa em paralelo, organização informacional, validação executada, crítica adversarial e decisão por métrica — não por impressão [2].</p>
+<h2>2. Arquitetura</h2>
+<pre><code class="language-mermaid">flowchart TD
+A[matéria-prima] --&gt; B[intake / entrevista]
+B --&gt; C[BRIEF aprovado]
+C --&gt; D[research ×N paralelo]
+D --&gt; E[organize: fontes + outline]
+E --&gt; F[verify: claims + cálculo]
+F --&gt; G[draft]
+G --&gt; H[figures]
+H --&gt; I[critique: cético ∥ retador]
+I --&gt; J{{juiz: média ≥ 8}}
+J -- correções (≤3) --&gt; G
+J -- aprova --&gt; K[render PDF/DOCX/HTML]</code></pre>
+<p>Figura 1 — Pipeline do Papo Pepper (especificação em <code>pipeline/pipeline.json</code>).</p>
+<h2>3. Papéis e responsabilidade única</h2>
+<table><thead><tr><th>Papel</th><th>Responsabilidade exclusiva</th><th>Artefato-chave</th></tr></thead><tbody><tr><td>Pesquisador Profundo</td><td>coleta em camadas com proveniência</td><td><code>research/*.md</code></td></tr><tr><td>Cientista da Informação</td><td>taxonomia, dedupe, outline</td><td><code>sources.md</code>, <code>outline.md</code></td></tr><tr><td>Validador</td><td>atestado de fonte/cálculo por afirmação</td><td><code>claims.md</code></td></tr><tr><td>Cético</td><td>falhas de método e evidência</td><td><code>critique/cetico.md</code></td></tr><tr><td>Retador</td><td>melhor caso contrário, de boa-fé</td><td><code>critique/tese-contra.md</code></td></tr><tr><td>Juiz</td><td>nota por critério; único poder de veto</td><td><code>ruling.md</code></td></tr></tbody></table>
+<h2>4. Garantia de qualidade</h2>
+<ul>
+<li><strong>Fonte:</strong> afirmação factual sem URL vira hipótese declarada.</li>
+<li><strong>Execução:</strong> número alegado é reproduzido em <code>lab/*.py</code> antes de entrar no texto.</li>
+<li><strong>Veto:</strong> aprovação exige média ≥ 8,0 em seis critérios e nenhum ≤ 6; máximo três rodadas.</li>
+<li><strong>Transparência:</strong> cada veredito cita o trecho julgado; disputas são decididas por fonte ou cálculo.</li>
+</ul>
+<h2>5. Limitações</h2>
+<p>O pipeline depende da honestidade da ferramenta de busca subjacente: fonte falsa acessível é fonte falsa verificada. A barra do juiz é calibrada para texto técnico; ensaios longos exigem retuning dos pesos.</p>
+<h2>6. Conclusão</h2>
+<p>Tratar o paper como produto de equipe — e não de geração — converte qualidade de sorte em qualidade de processo. Próximos passos: revisão cruzada por dois juízes independentes e backend LaTeX estrito.</p>
+<h2>Referências</h2>
+<ol>
+<li>Lewis, P. et al. (2020). <em>Retrieval-Augmented Generation for Knowledge-Intensive NLP Tasks.</em> arXiv:2005.11401.</li>
+<li>Wu, Q. et al. (2023). <em>AutoGen: Enabling Next-Gen LLM Applications via Multi-Agent Conversation.</em> arXiv:2308.08155.</li>
+</ol>
+<footer class="doc-footer">Gerado por Papo Pepper &middot; 2026-09-22</footer>
+</article>
+</body>
+</html>

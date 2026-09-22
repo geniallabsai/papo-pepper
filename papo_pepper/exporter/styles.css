@@ -1,0 +1,120 @@
+/* 🌶️ Papo Pepper — folha editorial (impressão A4 + leitura em tela) */
+:root {
+  --tinta: #20242b;
+  --suave: #5a6472;
+  --marca: #c8442c;
+  --papel: #ffffff;
+  --fundo-tela: #efece4;
+}
+
+@page {
+  size: A4;
+  margin: 2.1cm 1.9cm;
+  @bottom-center {
+    content: "Papo Pepper · página " counter(page) " de " counter(pages);
+    font-size: 8.5px;
+    color: #8a8377;
+    font-family: Helvetica, Arial, sans-serif;
+  }
+}
+
+* { box-sizing: border-box; }
+
+body {
+  font-family: "Source Serif 4", Georgia, "Times New Roman", serif;
+  font-size: 10.5pt;
+  line-height: 1.68;
+  color: var(--tinta);
+  margin: 0;
+}
+
+@media screen {
+  body { background: var(--fundo-tela); }
+  main, .capa, .sumario, footer.rodape {
+    background: var(--papel);
+    max-width: 20cm;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 2.6cm 2cm;
+    box-shadow: 0 0 34px rgba(0, 0, 0, 0.09);
+  }
+  main { padding-top: 0.8cm; border-radius: 0; }
+}
+
+.capa { text-align: center; padding-top: 5.5cm; page-break-after: always; }
+.capa .titulo { font-size: 29pt; line-height: 1.22; font-weight: 700; margin: 0 1cm; color: var(--tinta); }
+.capa .linha { width: 6cm; height: 3px; background: var(--marca); margin: 1.1cm auto; }
+.capa .meta { font-size: 11pt; color: var(--suave); }
+.capa .assinatura { font-size: 9pt; letter-spacing: 0.18em; text-transform: uppercase; color: var(--suave); margin-top: 3cm; }
+.quebra-caixa { border: none; }
+
+.sumario { page-break-after: always; padding-bottom: 2cm; }
+.sumario h2 { font-size: 14pt; color: var(--marca); letter-spacing: 0.06em; text-transform: uppercase; }
+.lista-toc { list-style: none; padding-left: 0; counter-reset: toc; }
+.lista-toc li { margin: 0.32em 0; font-size: 10pt; }
+.lista-toc li.nivel-2 { margin-left: 1.4em; font-size: 9.5pt; color: var(--suave); }
+.lista-toc li.nivel-3 { margin-left: 2.8em; font-size: 9pt; color: var(--suave); }
+.lista-toc a { color: inherit; text-decoration: none; }
+@media screen { .lista-toc a:hover { color: var(--marca); } }
+
+h1 {
+  font-size: 18.5pt;
+  line-height: 1.25;
+  border-bottom: 2px solid var(--marca);
+  padding-bottom: 0.22em;
+  margin-top: 1.6em;
+  page-break-after: avoid;
+}
+h2 { font-size: 14.5pt; margin-top: 1.35em; page-break-after: avoid; }
+h3 { font-size: 12pt; color: #2c3440; page-break-after: avoid; }
+h1:first-of-type { margin-top: 0; }
+
+p { margin: 0.75em 0; text-align: justify; }
+strong { color: #14181f; }
+
+pre {
+  background: #f4f1ea;
+  border: 1px solid #e3ddd0;
+  border-left: 3px solid var(--marca);
+  padding: 0.85em 1em;
+  border-radius: 6px;
+  font-size: 8.5pt;
+  line-height: 1.5;
+  white-space: pre-wrap;
+  word-break: break-word;
+  font-family: "JetBrains Mono", "Fira Code", Consolas, monospace;
+  page-break-inside: avoid;
+}
+code {
+  background: #f4f1ea;
+  padding: 0.08em 0.32em;
+  border-radius: 4px;
+  font-size: 0.9em;
+  font-family: "JetBrains Mono", "Fira Code", Consolas, monospace;
+}
+pre code { background: none; padding: 0; }
+
+table { border-collapse: collapse; width: 100%; font-size: 9.3pt; margin: 1.1em 0; page-break-inside: avoid; }
+th { background: #20242b; color: #fff; padding: 0.5em 0.7em; text-align: left; font-weight: 600; }
+td { border-bottom: 1px solid #d8d2c4; padding: 0.45em 0.7em; vertical-align: top; }
+tr:nth-child(even) td { background: #faf8f3; }
+
+blockquote {
+  border-left: 4px solid var(--marca);
+  margin: 1.1em 0;
+  padding: 0.55em 1.1em;
+  background: #faf6ef;
+  font-style: italic;
+  color: #3a414c;
+  page-break-inside: avoid;
+}
+
+img { max-width: 100%; display: block; margin: 1.2em auto; border: 1px solid #e0dacc; border-radius: 6px; }
+
+a { color: var(--marca); text-decoration: none; }
+@media screen { a:hover { text-decoration: underline; } }
+
+ul, ol { padding-left: 1.6em; }
+li { margin: 0.3em 0; }
+
+.rodape { text-align: center; color: #8a8377; font-size: 9pt; margin-top: 2.5em; }
