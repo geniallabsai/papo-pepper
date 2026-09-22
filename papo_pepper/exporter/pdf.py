@@ -321,7 +321,7 @@ def _pdf_fpdf(md: str, out: Path, titulo: str, autor: str, data: str) -> None:
             continue
         if linha.lstrip().startswith(">"):
             conteudo = re.sub(r"^\s*>\s?", "", linha)
-            f.set_font("Helvetica", "O", 10)
+            f.set_font("Helvetica", "I", 10)
             f.set_text_color(58, 65, 76)
             f.multi_cell(0, 5.4, _latin1("“" + _fp_esc(conteudo) + "”"), new_x="LMARGIN", new_y="NEXT")
             f.set_font("Helvetica", "", 10.5)
