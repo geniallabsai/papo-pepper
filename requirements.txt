@@ -1,0 +1,12 @@
+# Núcleo leve (wheels puras — instalador já usa requirements-core.txt)
+-r requirements-core.txt
+
+# PDF com CSS fiel (weasyprint precisa das libs pango/cairo do sistema;
+# alternativa: pandoc + latex ou chromium headless)
+# weasyprint>=64
+
+# Áudio -> texto (scripts/transcribe.py)
+# faster-whisper>=1.1
+
+# Métricas de código no pp-repo-paper (complexidade ciclomática)
+# radon>=6

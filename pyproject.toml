@@ -1,0 +1,39 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "papo-pepper"
+version = "0.1.0"
+description = "Equipe multi-agente que transforma qualquer assunto, entrevista, áudio ou repositório em um paper profundo, estruturado e exportado em PDF/Word."
+readme = "README.md"
+requires-python = ">=3.10"
+license = { text = "MIT" }
+authors = [{ name = "Drael" }]
+keywords = ["paper", "multi-agent", "research", "deep-research", "pdf", "word", "claude", "codex", "openclaw", "hermes"]
+dependencies = [
+  "click>=8.1",
+  "rich>=13.7",
+  "jinja2>=3.1",
+  "httpx>=0.27",
+  "python-docx>=1.1",
+  "markdown>=3.5",
+  "fpdf2>=2.8",
+  "pyyaml>=6.0",
+]
+
+[project.optional-dependencies]
+pdf = ["weasyprint>=62", "reportlab>=4"]
+audio = ["faster-whisper>=1.0"]
+math = ["numpy>=1.26", "scipy>=1.11", "sympy>=1.12", "matplotlib>=3.8"]
+dev = ["pytest>=8", "ruff>=0.4"]
+todos = ["papo-pepper[pdf,audio,math]"]
+
+[project.scripts]
+papo-pepper = "papo_pepper.cli:main"
+
+[tool.setuptools.packages.find]
+include = ["papo_pepper*"]
+
+[tool.setuptools.package-data]
+papo_pepper = ["prompts/*.md", "exporter/styles.css"]
